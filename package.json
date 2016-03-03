@@ -1,0 +1,23 @@
+{
+  "name": "theoretical-computer-science",
+  "version": "0.0.1",
+  "description": "Learn by Code",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "blank"
+  },
+  "keywords": [
+    "theoretical",
+    "computer",
+    "science",
+    "university"
+  ],
+  "author": "Max Hoffmann",
+  "license": "ISC"
+}
