@@ -10,7 +10,7 @@ switch (args[0]) {
     console.log(require('./shuffle')(args[1],args[2]));
     break;
   case "mu":
-    require('./mu_rekursive')
+    require('./mu-rekursion')
   default:
 
 }
