@@ -21,10 +21,12 @@ class MuRekursion extends PrimitivRekursive
 
 mu = new MuRekursion()
 
+console.log mu.monus(2,4)
+
 console.log mu.sg(0)
 console.log mu.lt(1,3)
 console.log mu.lt(3,1)
 console.log mu.gt(1,3)
 console.log mu.gt(3,1)
-console.log mu.eq(3,1)
-console.log mu.eq(3,3)
+# console.log mu.eq(3,1)
+# console.log mu.eq(3,3)

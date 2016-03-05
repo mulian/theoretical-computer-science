@@ -1,21 +1,15 @@
-random = (from,to) ->
-  value = Math.floor(Math.random() * to+1) + from
-  return random from,to-1 if value==to+1
-  return value
+shuffle = (p1,p2,pre="",array=[]) ->
+  split = (p) -> [p.substring(0,1),p.substring(1,p.length)]
 
-shuffle = (p1,p2,array=[]) ->
-  return p1+p2 if (p1.length==0 or p2.length==0)
-  split = (p) ->
-    cut = random(0,p.length)
-    return [p.substring(0,cut),p.substring(cut)]
+  if (p1.length==0 or p2.length==0)
+    array.push pre+p1+p2
+    return array
+
   [a,u] = split p1
   [b,v] = split p2
 
-  array.push a+shuffle(u,b+v,array)
-  array.push b+shuffle(a+u,v,array)
-
+  shuffle(u,b+v,pre+a,array)
+  shuffle(a+u,v,pre+b,array)
   return array
 
-
 module.exports = shuffle
-# console.log JSON.stringify shuffle "ab","cd"

@@ -10,7 +10,11 @@ switch (args[0]) {
     console.log(require('./shuffle')(args[1],args[2]));
     break;
   case "mu":
-    require('./mu-rekursion')
+    require('./mu-rekursion');
+  case "resleft":
+    console.log(require('./residuierung').left(args[1],args[2]));
+  case "resright":
+    console.log(require('./residuierung').right(args[1],args[2]));
   default:
 
 }
