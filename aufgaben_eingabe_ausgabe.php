@@ -29,11 +29,8 @@ function ne($x,$y) {
 }
 
 function monus($x,$y) {
-	if ($x>$y) {
-		return $x-$y;
-	} else {
-		return 0;
-	}
+	if ($y == 0) return $x;
+	return pred(monus($x, $y-1));
 }
 
 function succ($n) {
@@ -50,7 +47,8 @@ function pred($n) {
 }
 
 function half($n) {
-	
+	if ($n == 0) return 0;
+	return half(monus($n, 2));
 }
 
 if (isset($_POST) && sizeof($_POST)>0) {
@@ -76,15 +74,16 @@ if (isset($_POST) && sizeof($_POST)>0) {
 		**/
 		case "a_vier_blatt_zwei":
 			$n = $_POST['n'];
-
+			echo "Ergebnis: ";
+			echo half($n);
 		break;
 	}
 
 }
 
 ?>
-<h1>Übungsaufgabe 1 - Blatt 3</h1>
-<form id="uebungsaufgabe_eins" method="post" action="pr.php">
+<h1>Übungsaufgabe 1 - Blatt 3 ( g[m,x,y] )</h1>
+<form id="uebungsaufgabe_eins" method="post" action="aufgaben_eingabe_ausgabe.php">
 	<input type="hidden" name="aufgabe" value="ua_eins_blatt_drei" />
 	<input type="text" name="m" placeholder="m" />
 	<input type="text" name="x" placeholder="x" />
@@ -92,8 +91,8 @@ if (isset($_POST) && sizeof($_POST)>0) {
 	<input type="submit" value="Berechnen" />
 </form>
 
-<h1>Aufgabe 4 - Blatt 2 ( half </h1>
-<form id="" method="post" action="pr.php">
+<h1>Aufgabe 4 - Blatt 2 ( half[n] )</h1>
+<form id="" method="post" action="aufgaben_eingabe_ausgabe.php">
 	<input type="hidden" name="aufgabe" value="a_vier_blatt_zwei" />
 	<input type="text" name="n" placeholder="n" />
 	<input type="submit" value="Berechnen" />
